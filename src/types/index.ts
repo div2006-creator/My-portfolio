@@ -13,11 +13,19 @@ export interface Project {
   metrics?: { label: string; value: string }[];
 }
 
+export type SkillCategory =
+  | 'Programming Languages'
+  | 'Web Development'
+  | 'Backend & Database'
+  | 'AI/ML'
+  | 'Developer Tools';
+
 export interface Skill {
   name: string;
-  category: 'Frontend' | 'Backend & Database' | '3D & Graphics' | 'Tools & DevOps';
-  level: number; // 0 to 100
-  iconName?: string;
+  category: SkillCategory;
+  description: string;
+  tag: string;
+  iconName: string;
 }
 
 export interface Experience {

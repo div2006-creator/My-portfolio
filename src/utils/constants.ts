@@ -94,27 +94,162 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILLS: Skill[] = [
-  // 3D & Graphics
-  { name: "Three.js / WebGL", category: "3D & Graphics", level: 90 },
-  { name: "React Three Fiber", category: "3D & Graphics", level: 92 },
-  { name: "Drei & GLSL Shaders", category: "3D & Graphics", level: 85 },
-  { name: "Blender & GLTF Pipeline", category: "3D & Graphics", level: 80 },
+  // 1. Programming Languages
+  {
+    name: "Java",
+    category: "Programming Languages",
+    description: "Object-oriented programming, robust application architecture, and data structures.",
+    tag: "Core Language",
+    iconName: "Code2"
+  },
+  {
+    name: "C++",
+    category: "Programming Languages",
+    description: "High-performance algorithms, memory management, and competitive problem solving.",
+    tag: "Systems & DSA",
+    iconName: "Terminal"
+  },
+  {
+    name: "Python",
+    category: "Programming Languages",
+    description: "AI/ML data pipelines, scripting, computer vision automation, and backend logic.",
+    tag: "AI & Scripting",
+    iconName: "FileCode"
+  },
+  {
+    name: "JavaScript",
+    category: "Programming Languages",
+    description: "Asynchronous ES6+ web execution, dynamic DOM interfaces, and full-stack logic.",
+    tag: "Web Core",
+    iconName: "Braces"
+  },
 
-  // Frontend
-  { name: "React & Next.js", category: "Frontend", level: 95 },
-  { name: "TypeScript", category: "Frontend", level: 92 },
-  { name: "Tailwind CSS", category: "Frontend", level: 98 },
-  { name: "Framer Motion & GSAP", category: "Frontend", level: 90 },
+  // 2. Web Development
+  {
+    name: "React",
+    category: "Web Development",
+    description: "Building responsive, component-based UIs with modern hooks and state management.",
+    tag: "Frontend Framework",
+    iconName: "Layers"
+  },
+  {
+    name: "Three.js",
+    category: "Web Development",
+    description: "Hardware-accelerated 3D WebGL graphics, lighting, materials, and custom shaders.",
+    tag: "3D Web Graphics",
+    iconName: "Boxes"
+  },
+  {
+    name: "React Three Fiber",
+    category: "Web Development",
+    description: "Declarative 3D scene architecture, Drei helpers, and interactive canvas components.",
+    tag: "3D React Ecosystem",
+    iconName: "Box"
+  },
+  {
+    name: "HTML5 / CSS3",
+    category: "Web Development",
+    description: "Semantic page structure, flex/grid responsive layouts, and keyframe animations.",
+    tag: "Markup & Styling",
+    iconName: "Layout"
+  },
+  {
+    name: "Tailwind CSS",
+    category: "Web Development",
+    description: "Utility-first cyber styling, modern glassmorphic designs, and theme configurations.",
+    tag: "CSS Framework",
+    iconName: "Palette"
+  },
 
-  // Backend & Database
-  { name: "Node.js & Express", category: "Backend & Database", level: 88 },
-  { name: "PostgreSQL & Prisma", category: "Backend & Database", level: 84 },
-  { name: "REST & GraphQL APIs", category: "Backend & Database", level: 86 },
+  // 3. Backend & Database
+  {
+    name: "Node.js",
+    category: "Backend & Database",
+    description: "Event-driven asynchronous server runtimes and REST API web servers.",
+    tag: "Backend Runtime",
+    iconName: "Server"
+  },
+  {
+    name: "MySQL",
+    category: "Backend & Database",
+    description: "Relational database schema design, indexing, foreign keys, and complex SQL queries.",
+    tag: "Relational DB",
+    iconName: "Database"
+  },
+  {
+    name: "Express.js",
+    category: "Backend & Database",
+    description: "Modular backend routing, middleware validation, and API authentication.",
+    tag: "API Framework",
+    iconName: "Network"
+  },
+  {
+    name: "REST APIs",
+    category: "Backend & Database",
+    description: "Designing structured JSON endpoint architecture and HTTP request handling.",
+    tag: "API Architecture",
+    iconName: "Globe"
+  },
 
-  // Tools & DevOps
-  { name: "Git & GitHub Actions", category: "Tools & DevOps", level: 90 },
-  { name: "Vite & Webpack", category: "Tools & DevOps", level: 88 },
-  { name: "Docker & Vercel", category: "Tools & DevOps", level: 82 },
+  // 4. AI/ML
+  {
+    name: "Machine Learning",
+    category: "AI/ML",
+    description: "Supervised and unsupervised learning models, regression, classification, and metrics.",
+    tag: "Core AI Domain",
+    iconName: "Brain"
+  },
+  {
+    name: "Computer Vision",
+    category: "AI/ML",
+    description: "Digital image processing, visual data extraction, and object recognition pipelines.",
+    tag: "Visual Intelligence",
+    iconName: "Eye"
+  },
+  {
+    name: "PyTorch & Scikit-Learn",
+    category: "AI/ML",
+    description: "Neural network training, tensor computations, and machine learning model evaluation.",
+    tag: "ML Frameworks",
+    iconName: "Cpu"
+  },
+  {
+    name: "Data Analytics",
+    category: "AI/ML",
+    description: "Exploratory data analysis, feature engineering, and statistical data visualization.",
+    tag: "Data Pipelines",
+    iconName: "LineChart"
+  },
+
+  // 5. Developer Tools
+  {
+    name: "Git",
+    category: "Developer Tools",
+    description: "Distributed version control, branch management, merge conflict resolution, and commits.",
+    tag: "Version Control",
+    iconName: "GitBranch"
+  },
+  {
+    name: "GitHub",
+    category: "Developer Tools",
+    description: "Open-source collaboration, pull requests, repository management, and code reviews.",
+    tag: "Code Hosting",
+    iconName: "Github"
+  },
+  {
+    name: "Vite",
+    category: "Developer Tools",
+    description: "Next-generation fast frontend tooling, ESM module bundling, and instant HMR.",
+    tag: "Build Tool",
+    iconName: "Zap"
+  },
+  {
+    name: "VS Code",
+    category: "Developer Tools",
+    description: "Customized IDE environment, debugging workflows, and extension integrations.",
+    tag: "IDE Environment",
+    iconName: "Laptop"
+  }
 ];
 
 export const EXPERIENCES: Experience[] = [
