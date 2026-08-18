@@ -1,105 +1,154 @@
 import React, { useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, MeshDistortMaterial, OrbitControls } from '@react-three/drei';
+import { Float, Sparkles, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import { CanvasLoader } from './CanvasLoader';
 
-const CyberMesh: React.FC = () => {
-  const meshRef = useRef<THREE.Mesh>(null!);
-  const wireframeRef = useRef<THREE.Mesh>(null!);
+// Interactive Central Core Mesh
+const TechCore: React.FC = () => {
+  const groupRef = useRef<THREE.Group>(null!);
+  const innerMeshRef = useRef<THREE.Mesh>(null!);
+  const outerCageRef = useRef<THREE.Mesh>(null!);
+  const ring1Ref = useRef<THREE.Mesh>(null!);
+  const ring2Ref = useRef<THREE.Mesh>(null!);
 
-  useFrame((state) => {
+  useFrame((state, delta) => {
     const time = state.clock.getElapsedTime();
-    if (meshRef.current) {
-      meshRef.current.rotation.x = Math.sin(time / 2) * 0.3;
-      meshRef.current.rotation.y = time * 0.4;
+    const { x, y } = state.pointer; // Mouse position [-1 to 1]
+
+    // Automatic smooth rotation
+    if (innerMeshRef.current) {
+      innerMeshRef.current.rotation.y = time * 0.25;
+      innerMeshRef.current.rotation.x = Math.sin(time * 0.2) * 0.15;
     }
-    if (wireframeRef.current) {
-      wireframeRef.current.rotation.x = time * 0.2;
-      wireframeRef.current.rotation.y = Math.cos(time / 2) * 0.3;
+
+    if (outerCageRef.current) {
+      outerCageRef.current.rotation.y = -time * 0.15;
+      outerCageRef.current.rotation.z = time * 0.1;
+    }
+
+    if (ring1Ref.current) {
+      ring1Ref.current.rotation.x = Math.PI / 3 + Math.sin(time * 0.4) * 0.1;
+      ring1Ref.current.rotation.z = time * 0.3;
+    }
+
+    if (ring2Ref.current) {
+      ring2Ref.current.rotation.y = time * 0.35;
+      ring2Ref.current.rotation.x = Math.PI / 4 + Math.cos(time * 0.3) * 0.1;
+    }
+
+    // Subtle smooth mouse tracking tilt
+    if (groupRef.current) {
+      const targetRotationY = x * 0.35;
+      const targetRotationX = -y * 0.35;
+      groupRef.current.rotation.y = THREE.MathUtils.lerp(groupRef.current.rotation.y, targetRotationY, delta * 3);
+      groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, targetRotationX, delta * 3);
     }
   });
 
   return (
-    <Float speed={2} rotationIntensity={1.5} floatIntensity={2}>
-      <group scale={1.8}>
-        {/* Inner distorted organic core */}
-        <mesh ref={meshRef}>
-          <icosahedronGeometry args={[1, 4]} />
-          <MeshDistortMaterial
-            color="#00f0ff"
-            attach="material"
-            distort={0.4}
-            speed={2}
-            roughness={0.2}
-            metalness={0.8}
-            clearcoat={1}
-            clearcoatRoughness={0.1}
-          />
-        </mesh>
+    <group ref={groupRef}>
+      <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
+        <group scale={1.65}>
+          {/* Inner Solid Metallic Glass Crystal Core */}
+          <mesh ref={innerMeshRef}>
+            <icosahedronGeometry args={[1, 1]} />
+            <meshPhysicalMaterial
+              color="#0284c7"
+              roughness={0.15}
+              metalness={0.7}
+              clearcoat={1}
+              clearcoatRoughness={0.1}
+              transmission={0.2}
+              ior={1.5}
+              thickness={0.5}
+            />
+          </mesh>
 
-        {/* Outer futuristic geometric cage */}
-        <mesh ref={wireframeRef}>
-          <octahedronGeometry args={[1.5, 2]} />
-          <meshBasicMaterial
-            color="#7000ff"
-            wireframe
-            transparent
-            opacity={0.35}
-          />
-        </mesh>
-      </group>
-    </Float>
-  );
-};
+          {/* Outer Geometric Wireframe Structural Cage */}
+          <mesh ref={outerCageRef}>
+            <dodecahedronGeometry args={[1.4, 0]} />
+            <meshStandardMaterial
+              color="#6366f1"
+              wireframe
+              transparent
+              opacity={0.35}
+              emissive="#4338ca"
+              emissiveIntensity={0.4}
+            />
+          </mesh>
 
-const OrbitingRing: React.FC = () => {
-  const ringRef = useRef<THREE.Mesh>(null!);
+          {/* Outer Orbital Ring 1 */}
+          <mesh ref={ring1Ref}>
+            <torusGeometry args={[1.9, 0.012, 16, 100]} />
+            <meshStandardMaterial
+              color="#38bdf8"
+              emissive="#38bdf8"
+              emissiveIntensity={0.6}
+            />
+          </mesh>
 
-  useFrame((state) => {
-    const time = state.clock.getElapsedTime();
-    if (ringRef.current) {
-      ringRef.current.rotation.z = time * 0.5;
-      ringRef.current.rotation.x = Math.PI / 3 + Math.sin(time) * 0.1;
-    }
-  });
+          {/* Outer Orbital Ring 2 */}
+          <mesh ref={ring2Ref}>
+            <torusGeometry args={[2.2, 0.008, 16, 100]} />
+            <meshStandardMaterial
+              color="#818cf8"
+              emissive="#818cf8"
+              emissiveIntensity={0.5}
+              wireframe
+            />
+          </mesh>
 
-  return (
-    <mesh ref={ringRef} scale={3.2}>
-      <torusGeometry args={[1, 0.015, 16, 100]} />
-      <meshStandardMaterial
-        color="#00ff9d"
-        emissive="#00ff9d"
-        emissiveIntensity={0.5}
-        wireframe
-      />
-    </mesh>
+          {/* Core Node Accent Dots */}
+          {[
+            [0, 1.4, 0],
+            [0, -1.4, 0],
+            [1.4, 0, 0],
+            [-1.4, 0, 0],
+          ].map((pos, idx) => (
+            <mesh key={idx} position={pos as [number, number, number]}>
+              <sphereGeometry args={[0.04, 16, 16]} />
+              <meshBasicMaterial color="#38bdf8" />
+            </mesh>
+          ))}
+        </group>
+      </Float>
+    </group>
   );
 };
 
 export const HeroCanvas: React.FC = () => {
   return (
-    <div className="w-full h-[450px] md:h-[600px] relative cursor-grab active:cursor-grabbing">
+    <div className="w-full h-[380px] sm:h-[480px] md:h-[540px] lg:h-[600px] relative">
       <Canvas
         camera={{ position: [0, 0, 6], fov: 45 }}
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
       >
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={1.5} color="#00f0ff" />
-        <pointLight position={[-10, -10, -5]} intensity={1} color="#7000ff" />
-        <pointLight position={[5, -5, 5]} intensity={1.2} color="#ff007f" />
+        {/* Studio Lighting Setup */}
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[6, 8, 6]} intensity={1.4} color="#f0f9ff" />
+        <pointLight position={[-6, -6, -4]} intensity={0.8} color="#818cf8" />
+        <pointLight position={[0, 4, 4]} intensity={1} color="#38bdf8" />
+
+        {/* Floating Particles Field */}
+        <Sparkles
+          count={70}
+          scale={7}
+          size={2.5}
+          speed={0.4}
+          opacity={0.6}
+          color="#38bdf8"
+        />
 
         <Suspense fallback={<CanvasLoader />}>
-          <CyberMesh />
-          <OrbitingRing />
+          <TechCore />
           <OrbitControls
             enableZoom={false}
             enablePan={false}
-            maxPolarAngle={Math.PI / 1.5}
-            minPolarAngle={Math.PI / 3}
-            autoRotate
-            autoRotateSpeed={0.8}
+            maxPolarAngle={Math.PI / 1.6}
+            minPolarAngle={Math.PI / 2.4}
+            rotateSpeed={0.5}
           />
         </Suspense>
       </Canvas>

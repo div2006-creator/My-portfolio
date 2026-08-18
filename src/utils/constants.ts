@@ -1,21 +1,21 @@
 import { Project, Skill, Experience, NavItem } from '../types';
 
 export const PERSONAL_INFO = {
-  name: "Divyansh",
-  title: "Creative Developer & 3D Web Architect",
-  tagline: "Engineering immersive digital experiences with modern web tech and interactive 3D graphics.",
-  bio: "I specialize in building futuristic, high-performance web applications combining cutting-edge 3D WebGL scenes, responsive UI engineering, and scalable backend infrastructure.",
+  name: "Divyansh Sharma",
+  title: "Computer Science Engineering Student / Developer",
+  tagline: "Building intelligent, interactive and impactful digital experiences.",
+  bio: "I am a Computer Science Engineering student and developer passionate about building high-performance web applications, intelligent systems, and interactive 3D digital experiences.",
   email: "divyansh.dev@example.com",
   github: "https://github.com",
   linkedin: "https://linkedin.com",
   twitter: "https://twitter.com",
   location: "India",
-  status: "Available for high-impact projects & opportunities",
+  status: "Available for Software Engineering Roles & Projects",
   stats: [
-    { label: "Years Experience", value: "3+" },
-    { label: "Projects Completed", value: "24+" },
-    { label: "Interactive 3D Scenes", value: "15+" },
-    { label: "Client Satisfaction", value: "100%" },
+    { label: "Engineering Major", value: "CS & SE" },
+    { label: "Projects Built", value: "20+" },
+    { label: "Core Focus", value: "Web3D & AI" },
+    { label: "Code Quality", value: "100%" },
   ]
 };
 

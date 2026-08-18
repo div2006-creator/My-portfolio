@@ -53,10 +53,9 @@ export const Navbar: React.FC = () => {
             <div className="flex flex-col">
               <span className="font-heading font-bold text-lg text-white tracking-wide group-hover:text-cyber-cyan transition-colors">
                 {PERSONAL_INFO.name}
-                <span className="text-cyber-cyan">.dev</span>
               </span>
               <span className="text-[10px] font-mono text-slate-400 tracking-wider flex items-center gap-1">
-                <Sparkles className="w-2.5 h-2.5 text-cyber-emerald" /> 3D Web Creative
+                <Sparkles className="w-2.5 h-2.5 text-cyber-cyan" /> CS Student & Developer
               </span>
             </div>
           </a>
