@@ -292,40 +292,4 @@ export const SKILLS: Skill[] = [
   }
 ];
 
-export const EXPERIENCES: Experience[] = [
-  {
-    id: "exp-1",
-    role: "Senior 3D Web Engineer",
-    company: "CyberSpace Interactive",
-    period: "2024 - Present",
-    description: [
-      "Architected interactive 3D WebGL experiences and design systems using React Three Fiber, Three.js, and GSAP.",
-      "Optimized canvas performance achieving steady 60 FPS across mobile and low-tier GPU devices through geometry instancing and texture compression.",
-      "Mentored junior developers in WebGL shaders and state management pattern."
-    ],
-    skills: ["React", "Three.js", "R3F", "TypeScript", "GSAP"]
-  },
-  {
-    id: "exp-2",
-    role: "Full Stack Developer",
-    company: "Vortex Digital Labs",
-    period: "2023 - 2024",
-    description: [
-      "Built responsive, high-traffic web applications with React, Next.js, Node.js, and Tailwind CSS.",
-      "Implemented real-time WebSocket telemetry visualizers and interactive glassmorphism UI components.",
-      "Improved site load speeds by 45% using Vite bundle splitting and dynamic asset preloading."
-    ],
-    skills: ["React", "TypeScript", "Node.js", "Tailwind CSS", "PostgreSQL"]
-  },
-  {
-    id: "exp-3",
-    role: "Frontend Developer Engineer",
-    company: "Apex Tech Studios",
-    period: "2022 - 2023",
-    description: [
-      "Developed modular web frontends, REST API integrations, and smooth micro-animations using Framer Motion.",
-      "Collaborated with UI/UX designers to translate Figma wireframes into polished, pixel-perfect web interfaces."
-    ],
-    skills: ["JavaScript", "React", "HTML5/CSS3", "Framer Motion", "Tailwind CSS"]
-  }
-];
+export const EXPERIENCES: Experience[] = [];
