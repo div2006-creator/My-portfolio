@@ -5,10 +5,9 @@ export const PERSONAL_INFO = {
   title: "Computer Science Engineering Student / Developer",
   tagline: "Building intelligent, interactive and impactful digital experiences.",
   bio: "I am a Computer Science Engineering student and developer passionate about building high-performance web applications, intelligent systems, and interactive 3D digital experiences.",
-  email: "divyansh.dev@example.com",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
+  email: "sharmadiv888@gmail.com",
+  github: "https://github.com/div2006-creator",
+  linkedin: "https://www.linkedin.com/in/divyansh-sharma-5166ba331/",
   location: "India",
   status: "Available for Software Engineering Roles & Projects",
   stats: [
