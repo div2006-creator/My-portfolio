@@ -135,161 +135,42 @@ export const PROJECTS: Project[] = [
 
 export const SKILLS: Skill[] = [
   // 1. Programming Languages
-  {
-    name: "Java",
-    category: "Programming Languages",
-    description: "Object-oriented programming, robust application architecture, and data structures.",
-    tag: "Core Language",
-    iconName: "Code2"
-  },
-  {
-    name: "C++",
-    category: "Programming Languages",
-    description: "High-performance algorithms, memory management, and competitive problem solving.",
-    tag: "Systems & DSA",
-    iconName: "Terminal"
-  },
-  {
-    name: "Python",
-    category: "Programming Languages",
-    description: "AI/ML data pipelines, scripting, computer vision automation, and backend logic.",
-    tag: "AI & Scripting",
-    iconName: "FileCode"
-  },
-  {
-    name: "JavaScript",
-    category: "Programming Languages",
-    description: "Asynchronous ES6+ web execution, dynamic DOM interfaces, and full-stack logic.",
-    tag: "Web Core",
-    iconName: "Braces"
-  },
+  { name: "C", category: "Programming Languages", description: "Procedural programming, memory fundamentals, and low-level code execution.", iconName: "Code2" },
+  { name: "C++", category: "Programming Languages", description: "Object-oriented programming, data structures, and efficient algorithms.", iconName: "Terminal" },
+  { name: "Java", category: "Programming Languages", description: "Object-oriented software design, class hierarchies, and core Java APIs.", iconName: "Code" },
+  { name: "Python", category: "Programming Languages", description: "Scripting, data analysis, computer vision, and machine learning models.", iconName: "FileCode" },
+  { name: "JavaScript", category: "Programming Languages", description: "Dynamic web logic, asynchronous execution, and modern DOM manipulation.", iconName: "Braces" },
+  { name: "C#", category: "Programming Languages", description: "Object-oriented application development and Unity engine scripting.", iconName: "Cpu" },
 
   // 2. Web Development
-  {
-    name: "React",
-    category: "Web Development",
-    description: "Building responsive, component-based UIs with modern hooks and state management.",
-    tag: "Frontend Framework",
-    iconName: "Layers"
-  },
-  {
-    name: "Three.js",
-    category: "Web Development",
-    description: "Hardware-accelerated 3D WebGL graphics, lighting, materials, and custom shaders.",
-    tag: "3D Web Graphics",
-    iconName: "Boxes"
-  },
-  {
-    name: "React Three Fiber",
-    category: "Web Development",
-    description: "Declarative 3D scene architecture, Drei helpers, and interactive canvas components.",
-    tag: "3D React Ecosystem",
-    iconName: "Box"
-  },
-  {
-    name: "HTML5 / CSS3",
-    category: "Web Development",
-    description: "Semantic page structure, flex/grid responsive layouts, and keyframe animations.",
-    tag: "Markup & Styling",
-    iconName: "Layout"
-  },
-  {
-    name: "Tailwind CSS",
-    category: "Web Development",
-    description: "Utility-first cyber styling, modern glassmorphic designs, and theme configurations.",
-    tag: "CSS Framework",
-    iconName: "Palette"
-  },
+  { name: "HTML", category: "Web Development", description: "Structural web markup and semantic document architecture.", iconName: "Layout" },
+  { name: "CSS", category: "Web Development", description: "Web page styling, responsive flexbox & grid layouts, and visual design.", iconName: "Palette" },
+  { name: "JavaScript", category: "Web Development", description: "Interactive client-side functionality and modern web logic.", iconName: "Braces" },
+  { name: "React", category: "Web Development", description: "Component-based user interface development and modern state hooks.", iconName: "Layers" },
+  { name: "Node.js", category: "Web Development", description: "Server-side JavaScript runtime execution and web servers.", iconName: "Server" },
 
   // 3. Backend & Database
-  {
-    name: "Node.js",
-    category: "Backend & Database",
-    description: "Event-driven asynchronous server runtimes and REST API web servers.",
-    tag: "Backend Runtime",
-    iconName: "Server"
-  },
-  {
-    name: "MySQL",
-    category: "Backend & Database",
-    description: "Relational database schema design, indexing, foreign keys, and complex SQL queries.",
-    tag: "Relational DB",
-    iconName: "Database"
-  },
-  {
-    name: "Express.js",
-    category: "Backend & Database",
-    description: "Modular backend routing, middleware validation, and API authentication.",
-    tag: "API Framework",
-    iconName: "Network"
-  },
-  {
-    name: "REST APIs",
-    category: "Backend & Database",
-    description: "Designing structured JSON endpoint architecture and HTTP request handling.",
-    tag: "API Architecture",
-    iconName: "Globe"
-  },
+  { name: "MySQL", category: "Backend & Database", description: "Relational database management, SQL queries, and table schema design.", iconName: "Database" },
+  { name: "JDBC", category: "Backend & Database", description: "Java Database Connectivity API for database queries and data transactions.", iconName: "Network" },
+  { name: "Java Servlets", category: "Backend & Database", description: "Server-side Java web components for processing client HTTP requests.", iconName: "Server" },
+  { name: "JSP", category: "Backend & Database", description: "JavaServer Pages for server-side dynamic HTML rendering.", iconName: "Globe" },
 
-  // 4. AI/ML
-  {
-    name: "Machine Learning",
-    category: "AI/ML",
-    description: "Supervised and unsupervised learning models, regression, classification, and metrics.",
-    tag: "Core AI Domain",
-    iconName: "Brain"
-  },
-  {
-    name: "Computer Vision",
-    category: "AI/ML",
-    description: "Digital image processing, visual data extraction, and object recognition pipelines.",
-    tag: "Visual Intelligence",
-    iconName: "Eye"
-  },
-  {
-    name: "PyTorch & Scikit-Learn",
-    category: "AI/ML",
-    description: "Neural network training, tensor computations, and machine learning model evaluation.",
-    tag: "ML Frameworks",
-    iconName: "Cpu"
-  },
-  {
-    name: "Data Analytics",
-    category: "AI/ML",
-    description: "Exploratory data analysis, feature engineering, and statistical data visualization.",
-    tag: "Data Pipelines",
-    iconName: "LineChart"
-  },
+  // 4. AI / Machine Learning
+  { name: "Machine Learning", category: "AI / Machine Learning", description: "Supervised and unsupervised learning concepts and predictive data modeling.", iconName: "Brain" },
+  { name: "Deep Learning", category: "AI / Machine Learning", description: "Neural network architectures and deep learning model concepts.", iconName: "Cpu" },
+  { name: "Computer Vision", category: "AI / Machine Learning", description: "Image processing, visual data extraction, and object recognition.", iconName: "Eye" },
+  { name: "Generative AI", category: "AI / Machine Learning", description: "Generative artificial intelligence concepts and synthetic data application.", iconName: "Sparkles" },
+  { name: "YOLO", category: "AI / Machine Learning", description: "Real-time object detection models and bounding box predictions.", iconName: "Crosshair" },
 
-  // 5. Developer Tools
-  {
-    name: "Git",
-    category: "Developer Tools",
-    description: "Distributed version control, branch management, merge conflict resolution, and commits.",
-    tag: "Version Control",
-    iconName: "GitBranch"
-  },
-  {
-    name: "GitHub",
-    category: "Developer Tools",
-    description: "Open-source collaboration, pull requests, repository management, and code reviews.",
-    tag: "Code Hosting",
-    iconName: "Github"
-  },
-  {
-    name: "Vite",
-    category: "Developer Tools",
-    description: "Next-generation fast frontend tooling, ESM module bundling, and instant HMR.",
-    tag: "Build Tool",
-    iconName: "Zap"
-  },
-  {
-    name: "VS Code",
-    category: "Developer Tools",
-    description: "Customized IDE environment, debugging workflows, and extension integrations.",
-    tag: "IDE Environment",
-    iconName: "Laptop"
-  }
+  // 5. 3D / Development
+  { name: "Unity", category: "3D / Development", description: "Interactive 3D game engine development, asset integration, and C# scripting.", iconName: "Gamepad2" },
+  { name: "Three.js", category: "3D / Development", description: "3D WebGL graphics rendering, meshes, lighting, and camera management.", iconName: "Boxes" },
+  { name: "Ursina", category: "3D / Development", description: "Python-based 3D engine development for rapid prototyping.", iconName: "Box" },
+
+  // 6. Developer Tools
+  { name: "Git", category: "Developer Tools", description: "Distributed version control, branch management, and commit tracking.", iconName: "GitBranch" },
+  { name: "GitHub", category: "Developer Tools", description: "Cloud repository hosting, code collaboration, and version tracking.", iconName: "Github" },
+  { name: "VS Code", category: "Developer Tools", description: "Primary integrated development environment for coding and debugging.", iconName: "Laptop" }
 ];
 
 export const EXPERIENCES: Experience[] = [];

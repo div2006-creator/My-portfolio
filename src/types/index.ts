@@ -20,14 +20,14 @@ export type SkillCategory =
   | 'Programming Languages'
   | 'Web Development'
   | 'Backend & Database'
-  | 'AI/ML'
+  | 'AI / Machine Learning'
+  | '3D / Development'
   | 'Developer Tools';
 
 export interface Skill {
   name: string;
   category: SkillCategory;
-  description: string;
-  tag: string;
+  description?: string;
   iconName: string;
 }
 
