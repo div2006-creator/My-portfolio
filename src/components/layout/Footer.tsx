@@ -42,15 +42,17 @@ export const Footer: React.FC = () => {
               >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a
-                href={PERSONAL_INFO.twitter}
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-400 hover:text-cyber-cyan hover:border-cyber-cyan/40 transition-all"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
+              {'twitter' in PERSONAL_INFO && (PERSONAL_INFO as any).twitter && (
+                <a
+                  href={(PERSONAL_INFO as any).twitter}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-400 hover:text-cyber-cyan hover:border-cyber-cyan/40 transition-all"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="w-5 h-5" />
+                </a>
+              )}
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
                 className="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-400 hover:text-cyber-cyan hover:border-cyber-cyan/40 transition-all"
