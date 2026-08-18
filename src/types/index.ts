@@ -1,16 +1,19 @@
+export type ProjectCategory = 'Full Stack' | 'AI & Computer Vision' | 'IoT & Web' | 'Data Analytics';
+
 export interface Project {
   id: string;
   title: string;
   tagline: string;
   description: string;
   longDescription?: string;
-  category: 'Full Stack' | '3D & Creative' | 'AI & Web3' | 'Mobile / Apps';
+  category: ProjectCategory;
   tags: string[];
+  features?: string[];
   image: string;
   githubUrl?: string;
   liveUrl?: string;
   featured: boolean;
-  metrics?: { label: string; value: string }[];
+  contextTag?: string;
 }
 
 export type SkillCategory =

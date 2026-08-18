@@ -28,68 +28,108 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: "nexus-3d-dashboard",
-    title: "Nexus 3D Cyber Dashboard",
-    tagline: "Real-time futuristic analytics visualizer with interactive 3D WebGL nodes.",
-    description: "An enterprise-grade monitoring dashboard featuring real-time data streaming, interactive 3D network topology visualization, and customizable glassmorphism widgets.",
-    longDescription: "Nexus 3D Cyber Dashboard reimagines telemetry monitoring by representing server nodes as interactive 3D orbital constellations. Built with React Three Fiber and WebGL shaders, it offers zero latency streaming, hardware-accelerated rendering, and modular analytics cards.",
-    category: "3D & Creative",
-    tags: ["React", "Three.js", "R3F", "TypeScript", "Tailwind CSS", "WebSockets"],
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    featured: true,
-    metrics: [
-      { label: "Render Target", value: "60 FPS" },
-      { label: "Data Throughput", value: "10k msg/s" }
-    ]
-  },
-  {
-    id: "quantum-ai-platform",
-    title: "Quantum AI Studio",
-    tagline: "Generative AI workspace for developers and creative prompt engineers.",
-    description: "A full-stack SaaS platform empowering creators to generate 3D assets, code snippets, and design tokens using LLM orchestrations.",
-    longDescription: "Quantum AI Studio combines state-of-the-art generative artificial intelligence models with an intuitive node-based creative flow. Users can generate low-poly 3D models directly in the browser and export them to GLTF/GLB formats.",
+    id: "fabbit-business-platform",
+    title: "Fabbit Business Management Platform",
+    tagline: "Business operations, product, service, and administrative management system.",
+    description: "A business management platform developed for Fabbit to manage products, services, administration, and overall business operations.",
+    longDescription: "Fabbit Business Management Platform provides a comprehensive administrative and operational suite designed for Fabbit. It handles product catalog management, service offerings, business administration, secure authentication, and responsive modern user workflows.",
     category: "Full Stack",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Prisma"],
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    tags: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "MySQL", "REST APIs"],
+    features: [
+      "Product management",
+      "Categories and services",
+      "Admin management",
+      "Business management functionality",
+      "Authentication and authorization",
+      "Modern responsive interface",
+      "Deployment and domain integration"
+    ],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
     featured: true,
-    metrics: [
-      { label: "Active Users", value: "12,000+" },
-      { label: "Asset Generation", value: "< 2.5s" }
-    ]
+    contextTag: "Business Platform"
   },
   {
-    id: "hyperion-fintech",
-    title: "Hyperion DeFi Protocol",
-    tagline: "Decentralized liquidity platform with real-time WebGL asset visualization.",
-    description: "High-security DeFi platform featuring dynamic asset allocation charts, particle-based risk graphs, and slick wallet connection modules.",
-    longDescription: "Hyperion provides seamless liquidity pool management with custom Framer Motion page transitions, responsive dark mode glassmorphism UI, and real-time gas tracking.",
-    category: "AI & Web3",
-    tags: ["React", "Ethers.js", "Framer Motion", "Tailwind CSS", "Solidity"],
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    id: "page-pulse",
+    title: "Page Pulse",
+    tagline: "Web auditing tool generating real-time technical website reports.",
+    description: "A website auditing tool that analyzes a given website URL and generates a comprehensive technical report including HTTP status, performance metrics, SEO tags, and image metadata.",
+    longDescription: "Page Pulse (developed as part of the Digital Heroes Training Task) accepts any target URL and performs rapid server-side inspection to return structural and technical audits in JSON format, detailing HTTP response times, SEO headers, missing alt attributes, and approximate word counts.",
+    category: "Full Stack",
+    tags: ["JavaScript", "Node.js", "APIs", "HTML", "CSS"],
+    features: [
+      "HTTP status detection",
+      "Response-time measurement",
+      "Page title extraction",
+      "Meta description analysis",
+      "H1 count",
+      "Images missing alt text",
+      "Approximate word count",
+      "JSON-based backend response"
+    ],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    githubUrl: "https://github.com/div2006-creator/Page-Pulse-for-Digital-Heroes-Training-Task",
+    liveUrl: "https://page-pulse-for-digital-heroes-train.vercel.app/",
     featured: true,
-    metrics: [
-      { label: "TVL Tracked", value: "$45M+" },
-      { label: "Latency", value: "120ms" }
-    ]
+    contextTag: "Digital Heroes Training Task"
   },
   {
-    id: "aurora-design-system",
-    title: "Aurora Cyber Design System",
-    tagline: "A futuristic component library built for 3D web apps and dark UIs.",
-    description: "Comprehensive design system featuring 40+ accessible glassmorphism components, glow utilities, and Three.js canvas helper hooks.",
-    longDescription: "Aurora gives developers pre-built futuristic UI primitives, canvas wrappers, and custom GLSL shader effects ready to drop into any React application.",
-    category: "3D & Creative",
-    tags: ["React", "Storybook", "Tailwind CSS", "TypeScript", "GSAP"],
-    image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=80",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    featured: false
+    id: "grocery-6d-pose-estimation",
+    title: "Grocery Item 6D Pose Estimation",
+    tagline: "Computer vision 6D pose estimation using Falcon synthetic dataset.",
+    description: "A deep learning computer vision project developed for the Duality AI Hackathon estimating the 6D pose (3D translation & rotation) of grocery items from images.",
+    longDescription: "Grocery Item 6D Pose Estimation leverages deep learning architectures (YOLO) and synthetic dataset generation via the Falcon platform to predict precise 6D spatial poses for items in retail and automated robotic environments.",
+    category: "AI & Computer Vision",
+    tags: ["Python", "Computer Vision", "Deep Learning", "YOLO", "Synthetic Data"],
+    features: [
+      "Project overview & 6D pose estimation concept",
+      "Computer vision pipeline execution",
+      "Deep learning object recognition (YOLO)",
+      "Falcon synthetic dataset integration",
+      "Duality AI Hackathon context"
+    ],
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    featured: true,
+    contextTag: "Duality AI Hackathon"
+  },
+  {
+    id: "bamboo-3d-printing-farm",
+    title: "Bamboo 3D Printing Farm Management Platform",
+    tagline: "Web platform for remote monitoring and control of Bamboo 3D printers.",
+    description: "A web-based platform designed to monitor status, track progress, stream live camera feeds, and manage temperature & printer controls for Bamboo 3D printer farms.",
+    longDescription: "Bamboo 3D Printing Farm Management Platform interfaces with printer hardware over local LAN / Developer Mode connectivity. It provides real-time telemetry dashboards for print progress, AMS filament status, live video feeds, and remote pause/resume/cancel operational controls.",
+    category: "IoT & Web",
+    tags: ["HTML", "CSS", "JavaScript", "APIs", "3D Printer Integration"],
+    features: [
+      "Printer status monitoring",
+      "Print progress tracking",
+      "Temperature monitoring",
+      "Camera feed streaming",
+      "AMS information",
+      "Pause/resume/cancel print controls",
+      "LAN / Developer Mode printer connectivity"
+    ],
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+    featured: true,
+    contextTag: "Hardware & IoT"
+  },
+  {
+    id: "oceanguard",
+    title: "OceanGuard",
+    tagline: "Crowdsourced ocean hazard reporting and social media analytics platform.",
+    description: "An integrated platform helping collect, analyze, and visualize ocean hazard information using crowdsourced reports, data analytics, and social media data.",
+    longDescription: "OceanGuard aggregates real-time environmental hazard reports from community participants and social media sentiment streams, providing interactive data visualizations and AI-assisted hazard detection to support maritime safety.",
+    category: "Data Analytics",
+    tags: ["React", "Node.js", "Data Visualization", "Social Media Analytics", "AI Analysis"],
+    features: [
+      "Crowdsourced hazard reporting",
+      "Social media analytics",
+      "Ocean hazard monitoring",
+      "Data visualization",
+      "AI / data analysis components"
+    ],
+    image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80",
+    featured: true,
+    contextTag: "Environmental Tech"
   }
 ];
 
