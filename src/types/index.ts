@@ -45,6 +45,8 @@ export interface TimelineItem {
   link?: string;
 }
 
+export type Experience = TimelineItem;
+
 export interface NavItem {
   name: string;
   href: string;

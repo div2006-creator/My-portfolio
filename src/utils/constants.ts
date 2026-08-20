@@ -1,4 +1,4 @@
-import { Project, Skill, Experience, NavItem } from '../types';
+import { Project, Skill, Experience, TimelineItem, NavItem } from '../types';
 
 export const PERSONAL_INFO = {
   name: "Divyansh Sharma",

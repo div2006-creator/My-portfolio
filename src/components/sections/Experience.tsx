@@ -142,7 +142,7 @@ export const Experience: React.FC = () => {
 
                         {/* Bullet Highlights */}
                         <div className="space-y-1.5 pt-1">
-                          {item.highlights.map((h, hIdx) => (
+                          {item.highlights.map((h: string, hIdx: number) => (
                             <div key={hIdx} className="flex items-start gap-2 text-xs font-mono text-slate-300">
                               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0 mt-0.5" />
                               <span>{h}</span>
@@ -152,7 +152,7 @@ export const Experience: React.FC = () => {
 
                         {/* Tech Skills Pills */}
                         <div className="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
-                          {item.skills.map((skill) => (
+                          {item.skills.map((skill: string) => (
                             <span
                               key={skill}
                               className="px-2.5 py-0.5 rounded-md bg-slate-900 border border-slate-800 text-[10px] font-mono text-slate-300"
