@@ -31,13 +31,18 @@ export interface Skill {
   iconName: string;
 }
 
-export interface Experience {
+export type TimelineType = 'Hackathon' | 'Competition' | 'Project' | 'Achievement' | 'Education';
+
+export interface TimelineItem {
   id: string;
-  role: string;
-  company: string;
-  period: string;
-  description: string[];
+  title: string;
+  subtitle: string;
+  category: TimelineType;
+  dateTag?: string;
+  description: string;
+  highlights: string[];
   skills: string[];
+  link?: string;
 }
 
 export interface NavItem {

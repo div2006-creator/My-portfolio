@@ -173,4 +173,78 @@ export const SKILLS: Skill[] = [
   { name: "VS Code", category: "Developer Tools", description: "Primary integrated development environment for coding and debugging.", iconName: "Laptop" }
 ];
 
-export const EXPERIENCES: Experience[] = [];
+export const ACHIEVEMENTS_TIMELINE: TimelineItem[] = [
+  {
+    id: "duality-ai-hackathon",
+    title: "Duality AI Hackathon",
+    subtitle: "Grocery Item 6D Pose Estimation",
+    category: "Hackathon",
+    dateTag: "AI Hackathon",
+    description: "Developed a computer vision 6D pose estimation pipeline using deep learning models (YOLO) and Falcon synthetic dataset.",
+    highlights: [
+      "Tackled 6D spatial pose prediction from synthetic images",
+      "Trained deep learning models using Falcon synthetic data pipeline",
+      "Applied Computer Vision & Object Recognition"
+    ],
+    skills: ["Python", "Computer Vision", "Deep Learning", "YOLO", "Synthetic Data"]
+  },
+  {
+    id: "digital-heroes-training-task",
+    title: "Digital Heroes Training Task",
+    subtitle: "Page Pulse Technical Web Audit Tool",
+    category: "Competition",
+    dateTag: "Technical Challenge",
+    description: "Engineered and deployed Page Pulse, a web auditing tool that analyzes target URLs and generates detailed JSON technical reports.",
+    highlights: [
+      "Built URL HTTP status detection & response-time measurement",
+      "Extracted SEO metadata, H1 counts, & missing alt attributes",
+      "Deployed production Web Auditing tool on Vercel"
+    ],
+    skills: ["JavaScript", "Node.js", "APIs", "HTML", "CSS"],
+    link: "https://page-pulse-for-digital-heroes-train.vercel.app/"
+  },
+  {
+    id: "fabbit-platform-project",
+    title: "Fabbit Business Platform",
+    subtitle: "Full-Stack Enterprise System",
+    category: "Project",
+    dateTag: "Software Development",
+    description: "Developed a business management platform for Fabbit to manage products, service categories, administration, and user authentication.",
+    highlights: [
+      "Engineered administrative and operational management suite",
+      "Implemented secure authentication and responsive modern workflows",
+      "Integrated backend APIs and database schemas"
+    ],
+    skills: ["React", "Node.js", "MySQL", "JavaScript", "HTML/CSS"]
+  },
+  {
+    id: "bamboo-printer-farm",
+    title: "Bamboo 3D Printer Farm Manager",
+    subtitle: "IoT & Hardware Web Platform",
+    category: "Project",
+    dateTag: "IoT Development",
+    description: "Created a web-based platform to monitor status, track progress, stream live camera feeds, and manage remote controls for Bamboo 3D printer farms.",
+    highlights: [
+      "Connected to printers over local LAN / Developer Mode connectivity",
+      "Monitored print progress, temperatures, & AMS filament state",
+      "Implemented pause, resume, and cancel remote operational controls"
+    ],
+    skills: ["JavaScript", "HTML/CSS", "APIs", "3D Printer Integration"]
+  },
+  {
+    id: "galgotias-btech-cse",
+    title: "B.Tech in Computer Science & Engineering",
+    subtitle: "Galgotias University",
+    category: "Education",
+    dateTag: "Undergraduate Degree",
+    description: "Pursuing B.Tech CSE degree with strong emphasis on software engineering principles, algorithms, data structures, and computer vision.",
+    highlights: [
+      "Strong academic foundation in C, C++, Java, and Python",
+      "Continuous project development and algorithmic problem solving",
+      "Focus on full-stack web, computer vision, and backend architecture"
+    ],
+    skills: ["Java", "C++", "Python", "React", "MySQL"]
+  }
+];
+
+export const EXPERIENCES: TimelineItem[] = ACHIEVEMENTS_TIMELINE;
