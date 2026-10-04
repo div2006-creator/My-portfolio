@@ -422,25 +422,55 @@ function initCaseStudyModal() {
  * Filter Bar Logic (All, Featured, AI/ML, Full-Stack, Systems)
  */
 function initCategoryFilters() {
-  const filterBtns = document.querySelectorAll(".filter-btn");
+  const filterBtns = document.querySelectorAll(".filter-tab, .filter-btn");
   const projectCards = document.querySelectorAll("[data-category]");
+  const dividerFeatured = document.getElementById("divider-featured");
+  const dividerDomain = document.getElementById("divider-domain");
+  const dividerCivic = document.getElementById("divider-civic");
+  const containerFeatured = document.getElementById("container-featured");
+  const containerDomain = document.getElementById("container-domain");
+
+  if (!filterBtns.length) return;
 
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       filterBtns.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
-      const filterVal = btn.getAttribute("data-filter");
+      const filterVal = btn.getAttribute("data-filter") || "all";
+
+      let visibleInFeatured = 0;
+      let visibleInDomain = 0;
+      let visibleInCivic = 0;
 
       projectCards.forEach((card) => {
-        const cardCats = card.getAttribute("data-category") || "";
-        if (filterVal === "all" || cardCats.includes(filterVal)) {
+        const cardCats = (card.getAttribute("data-category") || "").split(/\s+/);
+        const isMatch = filterVal === "all" || cardCats.includes(filterVal);
+
+        if (isMatch) {
           card.style.display = "";
           card.style.opacity = "1";
+          if (containerFeatured && containerFeatured.contains(card)) {
+            visibleInFeatured++;
+          } else if (containerDomain && containerDomain.contains(card)) {
+            visibleInDomain++;
+          } else if (card.id === "project-saferoute") {
+            visibleInCivic++;
+          }
         } else {
           card.style.display = "none";
+          card.style.opacity = "0";
         }
       });
+
+      // Show/Hide section dividers according to whether any projects in that section are visible
+      if (dividerFeatured) dividerFeatured.style.display = visibleInFeatured > 0 ? "" : "none";
+      if (containerFeatured) containerFeatured.style.display = visibleInFeatured > 0 ? "" : "none";
+
+      if (dividerDomain) dividerDomain.style.display = visibleInDomain > 0 ? "" : "none";
+      if (containerDomain) containerDomain.style.display = visibleInDomain > 0 ? "" : "none";
+
+      if (dividerCivic) dividerCivic.style.display = visibleInCivic > 0 ? "" : "none";
     });
   });
 }
