@@ -285,6 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCaseStudyModal();
   initCategoryFilters();
   initPreviewInteractions();
+  initContactForm();
 });
 
 /**
@@ -489,5 +490,118 @@ function initPreviewInteractions() {
         });
       });
     });
+  }
+}
+
+/**
+ * Asynchronous Contact Form Submission to sharmadiv888@gmail.com
+ * Powered by FormSubmit.co API with instant feedback & email fallback
+ */
+function initContactForm() {
+  const form = document.getElementById("contactForm");
+  if (!form) return;
+
+  const submitBtn = document.getElementById("contactSubmitBtn");
+  const btnText = document.getElementById("submitBtnText");
+  const btnIcon = document.getElementById("submitBtnIcon");
+  const statusBox = document.getElementById("contactFormStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const nameInput = document.getElementById("fullName");
+    const emailInput = document.getElementById("email");
+    const subjectInput = document.getElementById("subject");
+    const messageInput = document.getElementById("message");
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const subject = subjectInput.value.trim() || "New Portfolio Inquiry";
+    const message = messageInput.value.trim();
+
+    if (!name || !email || !message) {
+      showStatus("Please fill in your name, email, and message.", "warning");
+      return;
+    }
+
+    // Set Loading State
+    if (submitBtn) submitBtn.disabled = true;
+    if (btnText) btnText.textContent = "Sending Message...";
+    if (btnIcon) btnIcon.textContent = "hourglass_empty";
+
+    const payload = {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+      _template: "table",
+      _captcha: "false",
+      _subject: `Portfolio Message from ${name}: ${subject}`
+    };
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/sharmadiv888@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+
+      if (response.ok && (result.success === "true" || result.success === true || result.message)) {
+        form.reset();
+        showStatus(
+          "Thank you! Your message has been sent directly to Divyansh's email (sharmadiv888@gmail.com). You will receive a response shortly.",
+          "success"
+        );
+      } else {
+        throw new Error(result.message || "Failed to submit form");
+      }
+    } catch (err) {
+      console.warn("Direct API submission note:", err);
+      // Fallback: Provide direct mailto trigger so the user's message is never lost
+      const mailtoLink = `mailto:sharmadiv888@gmail.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message)}`;
+      showStatus(
+        `Unable to reach the automated dispatch service. <a href="${mailtoLink}" class="underline font-bold text-primary hover:text-white">Click here to send directly via your email client</a>.`,
+        "error"
+      );
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+      if (btnText) btnText.textContent = "Send Message";
+      if (btnIcon) btnIcon.textContent = "send";
+    }
+  });
+
+  function showStatus(htmlMessage, type) {
+    if (!statusBox) return;
+    statusBox.classList.remove(
+      "hidden",
+      "bg-emerald-950/80",
+      "text-emerald-300",
+      "border-emerald-500/40",
+      "bg-rose-950/80",
+      "text-rose-300",
+      "border-rose-500/40",
+      "bg-amber-950/80",
+      "text-amber-300",
+      "border-amber-500/40"
+    );
+    statusBox.classList.add("border");
+
+    if (type === "success") {
+      statusBox.classList.add("bg-emerald-950/80", "text-emerald-300", "border-emerald-500/40");
+    } else if (type === "error") {
+      statusBox.classList.add("bg-rose-950/80", "text-rose-300", "border-rose-500/40");
+    } else {
+      statusBox.classList.add("bg-amber-950/80", "text-amber-300", "border-amber-500/40");
+    }
+
+    statusBox.innerHTML = htmlMessage;
+    statusBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 }
